@@ -22,4 +22,3 @@ while True:
     if vl53.data_ready:
         print(f"Distance: {vl53.distance} cm")
         vl53.clear_interrupt()
-    time.sleep(0.1)
