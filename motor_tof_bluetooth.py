@@ -138,9 +138,11 @@ while True:
                 write_rpms(get_all_rpm())
         dist = ew_dist.read_distance()
         if dist:
+            # Write the distance to BlueConnect and probably print statement for now
+            msg = f"Distance: {dist} cm"
+            ...  
             # set the distance at which you should go at an
             # appropriate throttle
-            print(f"Distance: {dist} cm")            
             if ... > ...:
                 set_throttle(..., ...)
             elif ... > ...:
