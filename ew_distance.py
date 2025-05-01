@@ -10,8 +10,10 @@ def setup(timing_budget = 50, time_between_measurements = 100):
     vl53.start_ranging()
     
 def read_distance():
-    if vl53.data_ready and vl53.range_status in [0,1,2]:
+    d = None
+    if vl53.data_ready and vl53.range_status in [0]:
             d = vl53.distance
-            return d
+    elif vl53.data_ready and vl53.range_status in [1,2]:
+            d = 160
     vl53.clear_interrupt()    
-    return None
+    return d
